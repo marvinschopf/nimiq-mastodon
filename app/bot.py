@@ -65,7 +65,7 @@ if __name__ == "__main__":
                                 continueWith = False
                                 sendReply(
                                     "@{to_user} I'm sorry, this currency is not (yet) supported by this bot.".format(
-                                        to_user=notification.account.username
+                                        to_user=notification.account.acct
                                     ),
                                     originalToot=notification.status,
                                 )
@@ -75,7 +75,7 @@ if __name__ == "__main__":
                                 print("Okay, replying...")
                                 sendReply(
                                     "@{to_user} The current price of NIMIQ is {price}.".format(
-                                        to_user=notification.account.username,
+                                        to_user=notification.account.acct,
                                         price=currencies.Currency(
                                             currency.upper()
                                         ).get_money_with_currency_format(price),
