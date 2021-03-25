@@ -6,6 +6,7 @@ It is written in Python and based on the APIs of [Mopsus](https://nimiq.mopsus.c
 Feel free to follow the bot on [@nimiq@chaos.social](https://chaos.social/@nimiq):)
 
 ## License
+```
 nimiq-mastodon
 Copyright (C) 2021 Marvin Schopf
 
@@ -21,3 +22,4 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```
