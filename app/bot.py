@@ -58,7 +58,7 @@ if __name__ == "__main__":
                             if continueWith:
                                 price = nimiqx.price(currency=currency.upper())
                                 print("Okay, replying...")
-                                client.mastodon.status_post(
+                                newToot = client.mastodon.status_post(
                                     "@{to_user} The current price of NIMIQ is {price}.".format(
                                         to_user=notification.account.username,
                                         price=currencies.Currency(
@@ -68,7 +68,11 @@ if __name__ == "__main__":
                                     in_reply_to_id=notification.status,
                                     visibility="direct",
                                 )
-                                print("Reply sent.")
+                                print(
+                                    "Reply sent. (ID: {new_toot_id})".format(
+                                        new_toot_id=newToot.id
+                                    )
+                                )
                         else:
                             print("Currency not found in intent...")
                     else:
