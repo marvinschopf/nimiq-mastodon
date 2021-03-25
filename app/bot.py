@@ -44,7 +44,6 @@ def sendReply(message: str, originalToot: tuple):
 if __name__ == "__main__":
     print("Bot started")
     while True:
-        print("Check started...")
         notifications = client.mastodon.notifications()
         client.mastodon.notifications_clear()
         for notification in notifications:
