@@ -31,6 +31,16 @@ container = IntentContainer("intent_cache")
 
 container.add_intent("price_currency", ["price {currency}", "price in {currency}"])
 
+
+def sendReply(message: str, originalToot: tuple):
+    newToot = client.mastodon.status_post(
+        message,
+        in_reply_to_id=originalToot,
+        visibility="direct",
+    )
+    print("Reply sent: {toot_id}".format(toot_id=newToot.id))
+
+
 if __name__ == "__main__":
     print("Bot started")
     while True:
@@ -54,24 +64,24 @@ if __name__ == "__main__":
                                 currencies.Currency(currency.upper())
                             except currencies.exceptions.CurrencyDoesNotExist:
                                 continueWith = False
+                                sendReply(
+                                    "@{to_user} I'm sorry, this currency is not (yet) supported by this bot.".format(
+                                        to_user=notification.account.username
+                                    ),
+                                    originalToot=notification.status,
+                                )
                                 print("Unknown currency...")
                             if continueWith:
                                 price = nimiqx.price(currency=currency.upper())
                                 print("Okay, replying...")
-                                newToot = client.mastodon.status_post(
+                                sendReply(
                                     "@{to_user} The current price of NIMIQ is {price}.".format(
                                         to_user=notification.account.username,
                                         price=currencies.Currency(
                                             currency.upper()
                                         ).get_money_with_currency_format(price),
                                     ),
-                                    in_reply_to_id=notification.status,
-                                    visibility="direct",
-                                )
-                                print(
-                                    "Reply sent. (ID: {new_toot_id})".format(
-                                        new_toot_id=newToot.id
-                                    )
+                                    originalToot=notification.status,
                                 )
                         else:
                             print("Currency not found in intent...")
