@@ -19,7 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 def format_hashrate(hashrate):
     if hashrate >= 1000 and hashrate < 1000000:
-        return "{:,.2f} KH/s".format(hashrate / 1000)
+        return "{:,.2f} kH/s".format(hashrate / 1000)
     elif hashrate >= 1000000 and hashrate < 1000000000:
         return "{:,.2f} MH/s".format(hashrate / 1000000)
     elif hashrate >= 1000000000:
