@@ -3,7 +3,7 @@
 
 It is written in Python and based on the APIs of [Mopsus](https://nimiq.mopsus.com) and [NimiqX](https://nimiqx.com).
 
-Feel free to follow the bot on [@nimiq@chaos.social](https://chaos.social/@nimiq):)
+Feel free to follow the bot on <a rel="me" href="https://chaos.social/@nimiq">@nimiq@chaos.social</a>:)
 
 ## License
 ```
