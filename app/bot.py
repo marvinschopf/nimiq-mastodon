@@ -59,13 +59,13 @@ if __name__ == "__main__":
                                 price = nimiqx.price(currency=currency.upper())
                                 print("Okay, replying...")
                                 client.mastodon.status_post(
-                                    "The current price of NIMIQ is {price}.".format(
-                                        reply_to=notification.account.username,
+                                    "@{to_user} The current price of NIMIQ is {price}.".format(
+                                        to_user=notification.account.username,
                                         price=currencies.Currency(
                                             currency.upper()
                                         ).get_money_with_currency_format(price),
                                     ),
-                                    in_reply_to_id=notification.status.id,
+                                    in_reply_to_id=notification.status,
                                     visibility="direct",
                                 )
                                 print("Reply sent.")
