@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 nimiq-mastodon
 Copyright (C) 2021 Marvin Schopf
