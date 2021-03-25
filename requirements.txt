@@ -1,0 +1,6 @@
+Mastodon.py
+python-dotenv
+requests
+padatious
+html2text
+currencies
