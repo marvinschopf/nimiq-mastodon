@@ -3,7 +3,7 @@
 
 It is written in Python and based on the APIs of [Mopsus](https://nimiq.mopsus.com) and [NimiqX](https://nimiqx.com).
 
-Feel free to follow the bot on <a rel="me" href="https://chaos.social/@nimiq">@nimiq@chaos.social</a>:)
+Feel free to follow the bot on [@nimiq@chaos.social](https://chaos.social/@nimiq):)
 
 ## License
 ```
@@ -23,3 +23,4 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
+<a rel="me" href="https://chaos.social/@nimiq"></a>
