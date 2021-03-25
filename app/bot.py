@@ -90,4 +90,4 @@ if __name__ == "__main__":
                     print("Confidence not high enough...")
             else:
                 print("Notification is no mention, skipping...")
-        time.sleep(5)
+        time.sleep(15)
