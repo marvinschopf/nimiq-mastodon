@@ -21,15 +21,18 @@ import client
 import mopsus
 import nimiqx
 import format_hashrate
+import currencies
 
 if __name__ == "__main__":
-    formatted_price_usd = "{:,} USD".format(nimiqx.price("USD"))
-    formatted_price_eur = "{:,} EUR".format(nimiqx.price("EUR"))
     mopsus_stats = mopsus.quickstats()
     client.mastodon.status_post(
         "Price: {price_usd} | {price_eur}\nGlobal hashrate: {hashrate}\nCurrent supply: {current_supply}\nBlock reward: {block_reward}".format(
-            price_usd=formatted_price_usd,
-            price_eur=formatted_price_eur,
+            price_usd=currencies.Currency("USD").get_money_with_currency_format(
+                nimiqx.price("USD")
+            ),
+            price_eur=currencies.Currency("EUR").get_money_with_currency_format(
+                nimiqx.price("EUR")
+            ),
             hashrate=format_hashrate.format_hashrate(
                 mopsus_stats["estimated_global_hashrate"]
             ),
